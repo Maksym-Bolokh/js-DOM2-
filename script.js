@@ -6,7 +6,7 @@ async function loadImages() {
   try {
     const response = await fetch(`${apiURL}?page=${page}&limit=4`);
     const images = await response.json();
-    page++; // Збільшуємо сторінку для наступного запиту
+    page++; 
 
     images.forEach(image => {
       const imgElement = document.createElement("img");
@@ -20,8 +20,8 @@ async function loadImages() {
 }
 
 function clearGallery() {
-  gallery.innerHTML = ""; // Очищення галереї
-  page = 1; // Скидання сторінки
+  gallery.innerHTML = ""; 
+  page = 1; 
 }
 
 function removeLastImage() {
@@ -36,5 +36,5 @@ function reverseGallery() {
   images.reverse().forEach(img => gallery.appendChild(img));
 }
 
-// Завантажуємо перші 4 картинки при завантаженні сторінки
+
 window.addEventListener("DOMContentLoaded", loadImages);
